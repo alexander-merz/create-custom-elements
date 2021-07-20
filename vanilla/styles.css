@@ -1,0 +1,19 @@
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  margin: 1rem auto;
+  width: fit-content;
+}

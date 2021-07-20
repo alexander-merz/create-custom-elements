@@ -1,0 +1,11 @@
+label {
+  color: blue;
+}
+
+label input[type='checkbox'] {
+  margin: 0;
+}
+
+label span {
+  text-transform: capitalize;
+}
