@@ -1,7 +1,10 @@
-label {
+:host {
   display: block;
-  color: blue;
+}
+
+label {
   user-select: none;
+  color: blue;
   display: flex;
   justify-content: center;
   align-items: center;

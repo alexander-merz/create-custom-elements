@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <style>
+      html,
+      body {
+        min-height: 100vh;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h1 {
+        margin: 1rem auto;
+        width: fit-content;
+      }
+    </style>
+    <script type="module" src="/build/stencil.esm.js"></script>
+    <script nomodule src="/build/stencil.js"></script>
+  </head>
+  <body>
+    <h1>Stencil Web Components</h1>
+    <br />
+    <simple-checkbox checked></simple-checkbox>
+    <br />
+    <span>Another span outside the component</span>
+
+    <script>
+      const onchange = event => console.log('In Event Listener: ', event.target.checked);
+      const simpleCheckbox = document.querySelector('simple-checkbox');
+      simpleCheckbox.addEventListener('change', onchange);
+    </script>
+  </body>
+</html>
