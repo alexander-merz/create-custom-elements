@@ -16,6 +16,18 @@
 */
 
 class SimpleCheckbox extends HTMLElement {
+  get checked() {
+    return this.hasAttribute('checked');
+  }
+
+  set checked(value) {
+    if (value) {
+      this.setAttribute('checked', value);
+    } else {
+      this.removeAttribute('checked');
+    }
+  }
+
   constructor() {
     super();
     this.root = this.attachShadow({ mode: 'open' });
@@ -24,6 +36,7 @@ class SimpleCheckbox extends HTMLElement {
   connectedCallback() {
     this.render();
     this.initEventListener();
+    this.onChange();
   }
 
   disconnectedCallback() {
@@ -36,24 +49,27 @@ class SimpleCheckbox extends HTMLElement {
         <style>@import "./simple-checkbox/simple-checkbox.css"</style>
         <label style="user-select: none">
             <input type="checkbox">
-            <span><slot>Check, mate</slot></span>
+            <span><slot>${this.checked}</slot></span>
         </label>
     `;
     this.root.appendChild(template.content.cloneNode(true));
+    this.input = this.root.querySelector('input[type="checkbox"]');
+    this.label = this.root.querySelector('label span');
   }
 
   initEventListener() {
-    const checkbox = this.root.querySelector('input[type="checkbox"]');
-    const labelSpan = this.root.querySelector('label span');
+    this.input.addEventListener('change', this.onChange.bind(this));
+  }
 
-    checkbox.addEventListener('change', () => {
-      labelSpan.textContent = checkbox.checked;
-    });
+  onChange() {
+    this.checked = this.input.checked;
+    this.label.textContent = this.checked;
+    this.dispatchEvent(new Event('change'));
   }
 
   destoryEventListener() {
     const checkbox = this.root.querySelector('input[type="checkbox"]');
-    checkbox.removeEventListener('change');
+    checkbox.removeEventListener('change', this.onChange);
   }
 }
 

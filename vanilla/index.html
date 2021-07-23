@@ -12,8 +12,15 @@
   <body>
     <h1>Vanilla JS Web Components</h1>
     <br />
-    <simple-checkbox>False</simple-checkbox>
+    <simple-checkbox checked></simple-checkbox>
     <br />
     <span>Another span outside the component</span>
   </body>
+  <script>
+    const onchange = event => {
+      console.log('In Event Listener: ', event.target.checked);
+    };
+    const simpleCheckbox = document.querySelector('simple-checkbox');
+    simpleCheckbox.addEventListener('change', onchange);
+  </script>
 </html>
