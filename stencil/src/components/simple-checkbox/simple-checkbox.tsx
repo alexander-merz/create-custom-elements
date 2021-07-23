@@ -1,5 +1,21 @@
 import { Component, Event, EventEmitter, h, Method, Prop, State, Watch } from '@stencil/core';
 
+/*
+
+  Takeaways
+
+  (+) Small API and intuitive decorators
+  (+) Render template as JSX
+  (+) Builds on native DOM Events (no synthetic events like in React)
+  (+) Outputs are native web components for various targets
+
+  (-) No inheritance and thus mixins allowed (composition is possible though)
+  (-) No two-way-data binding (!) current solution feels like a workaround
+      To trigger rerender on checkbox change @State() has to be added
+      To reflect checked as attribute @Prop() has to be added
+      Can not combine decorators => two attributes doing one thing
+
+*/
 @Component({
   tag: 'simple-checkbox',
   styleUrl: 'simple-checkbox.css',

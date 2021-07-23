@@ -3,6 +3,8 @@
     Takeaways
 
     (+) The most lightweight solution lol
+    (+) No build steps
+    (+) Can run directly in the web browser
 
     (-) Low level api and even lower developer experience
     (-) Can not inherit from a subclass of HTMLElement (e.g. HTMLInputElement)
