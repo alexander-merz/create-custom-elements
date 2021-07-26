@@ -10,9 +10,9 @@ import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 
 export default {
-  input: 'components/simple-checkbox/simple-checkbox.js',
+  input: 'public-api.ts',
   output: {
-    file: 'simple-checkbox.bundled.js',
+    file: 'public-api.bundled.js',
     format: 'esm',
   },
   onwarn(warning) {
