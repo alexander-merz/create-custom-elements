@@ -1,1 +1,1 @@
-export * from './components/simple-checkbox/simple-checkbox';
+export * from './components/simple-checkbox/simple-checkbox.component';

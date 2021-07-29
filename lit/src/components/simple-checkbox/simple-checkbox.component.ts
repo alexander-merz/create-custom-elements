@@ -1,33 +1,14 @@
-import {LitElement, html, css} from 'lit';
+import {LitElement, html} from 'lit';
 import {customElement, property} from 'lit/decorators.js';
+
+import styles from './simple-checkbox.styles';
 
 /** A simple checkbox */
 @customElement('simple-checkbox')
 export class SimpleCheckbox extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-    }
+  static styles = styles;
 
-    label {
-      user-select: none;
-      color: blue;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.25rem;
-    }
-
-    label input[type='checkbox'] {
-      margin: 0;
-    }
-
-    label span {
-      text-transform: capitalize;
-    }
-  `;
-
-  @property() checked: boolean = false;
+  @property() checked = false;
 
   onChange(event: Event) {
     const checkbox = event.target as HTMLInputElement;

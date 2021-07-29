@@ -7,7 +7,9 @@
   "module": "my-element.js",
   "type": "module",
   "scripts": {
-    "build": "tsc",
+    "build": "npm run build:esm && npm run build:umd",
+    "build:esm": "tsc",
+    "build:umd": "rollup -c",
     "build:watch": "tsc --watch",
     "clean": "rimraf my-element.{d.ts,d.ts.map,js,js.map} test/my-element.{d.ts,d.ts.map,js,js.map} test/my-element_test.{d.ts,d.ts.map,js,js.map}",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
