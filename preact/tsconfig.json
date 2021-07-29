@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "rootDir": "src",
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "jsx": "react",
+    "jsxFactory": "h",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["es2018", "dom"],
+    "moduleResolution": "node"
+  }
+}

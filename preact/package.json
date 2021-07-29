@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "build:www": "rimraf www && mkdir www && browserify src/index.ts -p [ tsify --noImplicitAny ] > www/components.js",
+    "build:lib": "tsc --project tsconfig.esm.json"
+  },
+  "dependencies": {
+    "browserify": "^17.0.0",
+    "preact": "^10.5.14",
+    "preact-custom-element": "^4.2.1",
+    "tsify": "^5.0.4"
+  },
+  "devDependencies": {
+    "@types/preact-custom-element": "^4.0.1"
+  }
+}
